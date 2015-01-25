@@ -2,20 +2,20 @@
  * Created by wg on 15/1/18.
  */
 function getResult() {
-    var x = parseInt(document.getElementById("x").value)
-    var y = parseInt(document.getElementById("y").value)
-    var direction = document.getElementById("direction").value
+    var sizex =parseInt($("#sizex").val())
+    var sizey =parseInt($("#sizey").val())
+    var x = parseInt($("#x").val())
+    var y = parseInt($("#y").val())
+    var direction = $("#direction").val()
     var location = {
         x: x,
         y: y,
         direction: direction
     }
 
-    var routes = document.getElementById("route").value
+    var routes = $("#route").val()
 
     var directionList = ['N', 'W', 'S', 'E'];
-
-    //var number = parseInt(firstDirection(direction));
 
     var number  =directionList.indexOf(direction);
 
@@ -33,18 +33,14 @@ function getResult() {
             direction = directionList[number];
         }
     }
+    alert(location.x+","+location.y)
+    if(location.x>sizex || location.y>sizey){
+        $("#result").html("超出范围了 请重新输入")
+    }else{
+        $("#result").html(location.x+','+location.y+','+direction)
+    }
 
-    //function firstDirection(dire) {
-    //    if ('N' == dire) {
-    //        return 0
-    //    } else if ('W' == dire) {
-    //        return 1
-    //    } else if ('S' == dire) {
-    //        return 2
-    //    } else if ('E' == dire) {
-    //        return 3
-    //    }
-    //}
+
 
     function move(direction) {
         if ('N' == direction) {
@@ -74,7 +70,6 @@ function getResult() {
         else
             number -= 1;
     }
-    document.getElementById("result").innerHTML =location.x+','+location.y+','+direction
 
 
 }

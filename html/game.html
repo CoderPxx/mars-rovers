@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <script src ="../js/game.js"></script>
-</head>
-<body>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="../js/game.js"></script>
+        <script src ="../bower_components/jquery/dist/jquery.js"></script>
+    </head>
+    <body>
+        <div>
+            <label>Size:</label><br>
+            <input id  ="sizex" type = "text" placeholder="X">
+            <input id  ="sizey" type = "text" placeholder="Y">
+        </div>
+        <br>
+        <div>
+            <label>Location:</label><br>
+            <input id="x" type="text" name=“x” placeholder="X">
+            <input id="y" type="text" name=“y” placeholder="Y">
+            <input id="direction" type="text" placeholder="N,W,S,or E">
+        </div>
+        <br>
+        <div>
+            <label>Route:</label><br>
+            <input id="route" type="text" name=“Route” placeholder="L , R, or M">
+        </div>
+        <br>
+        <button type="button" onclick="getResult()">显示结果</button>
 
-<div>
-    <label>Location:</label>
-    <input id="x" type="text" name=“x” placeholder="X">
-    <input id="y" type="text" name=“y” placeholder="Y">
-    <input id="direction" type="text"  placeholder="N,W,S,or E">
-</div>
-<br>
-<div>
-    <label>Route:</label>
-    <input id="route" type="text" name=“Route” placeholder="L , R, or M">
-</div>
-<br>
-<button type="button" onclick="getResult()">显示结果</button>
+        <p id="result" type="text"></p>
 
-<p id ="result" type ="text"></p>
-
-</body>
+    </body>
 </html>
